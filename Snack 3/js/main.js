@@ -7,10 +7,10 @@ const numeri = [1, 2, 3, 4, 5, 6];
 
 
 
-function filterPerPosition(a, b, array) {
+function choosePerPosition(a, b, array) {
     let newArray = [];
 
-     numeri.filter((element, index) => {
+     numeri.forEach((element, index) => {
         if(index >= a && index <= b){
 
             newArray.push(element);
@@ -21,5 +21,14 @@ function filterPerPosition(a, b, array) {
 }
 
 
-const numeriFiltrati = filterPerPosition( 2, 4, numeri); 
-console.log(numeriFiltrati);
+function filterPerPosition(a, b, array) {
+    let newArray = array.filter((element, index)=> {
+     return index >= a && index <= b;   
+    });
+    return newArray;
+}
+
+const numeriFiltratiFilter = choosePerPosition( 3, 5, numeri); 
+const numeriFiltratiForEach = filterPerPosition( 2, 4, numeri); 
+console.log(numeriFiltratiFilter);
+console.log(numeriFiltratiForEach);
